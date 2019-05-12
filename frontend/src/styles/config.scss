@@ -1,0 +1,43 @@
+@charset 'UTF-8';
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500i,900');
+
+/// Mapa para configuração de cores
+/// @group    Configurações
+$colors: (
+  amarelo: (
+    base: #FFE600,
+  ),
+  cinza: (
+    base: #333333,
+    light: #eeeeee,
+    medium: #999999,
+    dark: #666666
+  ),
+  blue: (
+    base: #3483fa
+  )
+) !default;
+
+/// Lista de fontes para fallback
+/// @group    Fontes
+$font-fallback: Tahoma, Verdana, Segoe, sans-serif !default;
+
+/// Mapa dos tamanhos de fontes utilizadas
+/// @group Fontes
+$font-sizes: (
+  base: 16px,
+  smaller: 12px,
+  small: 14px,
+  medium: 24px,
+  big: 28px,
+  super: 46px
+) !default;
+
+/// Mapa dos tamanhos dos espaçamentos
+/// @group Spaces
+$spaces: (
+  p    : 16px,
+  base : 32px
+) !default;
+
