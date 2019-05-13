@@ -1,0 +1,18 @@
+@charset 'UTF-8';
+
+body {
+  position: relative;
+  background-color: color(cinza, light);
+  color: color(cinza);
+  font-family: 'Roboto';
+  line-height: 1.2;
+}
+
+
+h1 {
+  color: red; 
+
+  &:hover {
+    color: yellow;
+  }
+}

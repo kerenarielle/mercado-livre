@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@charset 'UTF-8';
+
+// @section  Tools [ferramentas]
+
+@import './styles/tools/functions/_colors.scss';
+@import './styles/tools/functions/_clean-unit.scss';
+@import './styles/tools/functions/_converters.scss';
+@import './styles/tools/functions/_font-size.scss';
+@import './styles/tools/functions/_get-maps.scss';
+@import './styles/tools/functions/_space.scss';
+
+// // @section  Settings [configurações]
+@import './styles/config.scss';
+
+// // @section Generics [genéricos]
+@import './styles/generics/_reset.scss';
+
+@import './styles/elements/body.scss';
+
+@import './styles/components/header.scss';
+@import './styles/components/container.scss'
