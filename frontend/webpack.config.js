@@ -28,7 +28,10 @@ let config = {
     rules: [{
       test: /\.js$/,
       exclude: /node_modules/,
-      loader: 'babel-loader'
+      loader: 'babel-loader',
+      query: {
+        presets: ['es2015', 'react']
+      }
     },{
       test: /\.(sa|sc|c)ss$/,
       use: [

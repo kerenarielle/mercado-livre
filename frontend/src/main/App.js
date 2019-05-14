@@ -29,7 +29,6 @@ export default class mercado extends Component {
       if (search !== '' && search !== undefined) {
         axios.get(`${URL}?description${search}`)
           .then(resp => {
-            const resultados = resp.data.results;
             this.setState({...this.state, description, list: resp.data.results})
           }
         )
