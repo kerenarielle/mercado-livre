@@ -1,11 +1,32 @@
-import React from 'react';
-import logo from '../logo.svg';
+import React, { Component } from 'react';
 import Header from './header';
+import Produtos from './listProduct';
+import axios from 'axios'
 
-function App() {
-  return (
-    <Header></Header>
-  );
+const URL = 'http://localhost:3003/'
+
+export default class mercado extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { list: []}
+    this.refresh()
+  }
+
+  refresh() {
+    axios.get(`${URL}`)
+        .then(resp => this.setState({...this.state, list: resp.data.results})
+    )
 }
 
-export default App;
+  render() {
+    return (
+      <div className="App">
+        <Header></Header>
+        <Produtos list={this.state.list}></Produtos>
+      </div>
+    )
+  }
+
+}
+
+

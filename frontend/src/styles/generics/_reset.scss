@@ -27,7 +27,6 @@ mark, span, br {
   font-weight: normal;
   vertical-align: baseline;
   background: transparent;
-
 }
 :after,
 :before {
@@ -74,4 +73,8 @@ td {
 }
 [hidden] {
   display: none;
+}
+
+li {
+  list-style: none;
 }

@@ -2,9 +2,49 @@ header {
   background-color: color(amarelo);
   padding: space(medium);
 
-  a {
-    // background-image: url('../../assets/Logo_ML.png');
-    background-repeat: none;
-    font-size: 16px;
+  h1 {
+    width: 15%;
+  }
+
+
+  input {
+    background-color: color(branco);
+    border: none;
+    border-radius: 4px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: space(p);
+    width: 95%;
+
+    @media (max-width: 400px) {
+      width: 90%;
+      padding: space(medium);
+    }
+  }
+
+  button {
+    width:5%;
+    background-color: color(cinza, light);
+    border: none;
+
+    @media (max-width: 400px) {
+      width: 10%;
+    }
+  }
+
+  form {
+    display: flex;
+    width: 80%;
+
+    @media (max-width: 400px) {
+      width: 100%;
+      margin-top: space(base);
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 }

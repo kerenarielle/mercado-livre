@@ -4,14 +4,13 @@ import React from 'react';
 function Header() {
   return (
     <header>
-      <div class="container">
+      <div className="container">
         <h1>
-          <a>Logo mercado livre</a>
+          Logo
         </h1>
 
         <form>
-          <label>Nunca dejes de buscar</label>
-          <input type="text" />
+          <input type="text" placeholder="Nunca dejes de buscar"/>
           <button></button>
         </form>
 
