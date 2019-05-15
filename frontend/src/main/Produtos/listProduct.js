@@ -1,5 +1,5 @@
 import React from 'react';
-import frete from '../assets/ic_shipping.png';
+import frete from '../../assets/ic_shipping.png';
 
 export default props => {
 
@@ -29,5 +29,4 @@ export default props => {
       </div>
     </section>
   ) 
-
 }

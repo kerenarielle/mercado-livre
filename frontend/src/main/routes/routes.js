@@ -1,7 +1,7 @@
-import React from 'react'
-import {Router, Route, Redirect, browserHistory} from 'react-router'
-import Item from './Item/Item';
-import Produto from './produtos'
+import React from 'react';
+import {Router, Route, Redirect, browserHistory} from 'react-router';
+import Item from '../Item/Item';
+import Produto from '../Produtos/produtos';
 
 export default props => (
     <Router history={browserHistory}>
