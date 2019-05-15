@@ -7,9 +7,6 @@ const request = require('request');
 const http = require('http')
 const routes = require('./routes')
 
-const model = require('../controller/mercado')
-
-
 server.use(bodyParser.urlencoded({ extended: true }))
 server.use(bodyParser.json())
 server.use(allowCors)
@@ -29,11 +26,12 @@ server.get('/', function(req, res, rep) {
   })
 })
 
-server.get('/api/items/:id/:description', function(req, res, rep) {
-  
+server.get('/:description', function(req, res, rep) {
+  routes.getDescription(function(response) {
+    res.write(response)
+    res.end()
+  })
 })
-
-
 
 
 server.listen(port, function() {
