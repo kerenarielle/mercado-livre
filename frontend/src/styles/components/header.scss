@@ -1,23 +1,28 @@
 header {
   background-color: color(amarelo);
-  padding: space(medium);
-  height: 60px;
 
   h1 {
     width: 15%;
+
+    @media (max-width: 400px) {
+      width: 100%;
+      margin-top: space(base);
+      min-height: 50px;
+    }
 
     a {
       display: block;
       background-image: url('assets/Logo_ML-grande.png');
       background-repeat: no-repeat;
       background-position-x: center;
+      background-position-y: center;
       height: 100%;
       overflow: hidden;
       text-indent: -9999px;
+      background-size: 60px;
       
       @media (max-width: 600px) {
         background-image: url('assets/Logo_ML.png');
-        background-size: 60px;
       }
     }
   }
@@ -30,7 +35,7 @@ header {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     padding: space(p);
-    width: 95%;
+    width: 90%;
 
     @media (max-width: 400px) {
       width: 90%;
@@ -39,7 +44,7 @@ header {
   }
 
   button {
-    width:5%;
+    width: 5%;
     background-color: color(cinza, light);
     background-image: url('assets/ic_Search.png');
     background-repeat: no-repeat;
@@ -56,10 +61,11 @@ header {
   form {
     display: flex;
     width: 80%;
+    margin: space(base, 0);
 
     @media (max-width: 400px) {
       width: 100%;
-      margin-top: space(base);
+      margin: space(base);
     }
   }
 
