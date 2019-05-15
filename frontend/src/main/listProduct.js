@@ -4,16 +4,9 @@ import frete from '../assets/ic_shipping.png';
 export default props => {
 
   const lista = () => {
-    // const frete = false;
     const list = props.list || [];
-
-    // list.map(itens => {
-      // if (itens.shipping.free_shipping) {
-      //   frete = true;
-      // }
-
       return list.map(itens => (
-        <li key={itens.id}>
+        <li key={itens.id} onClick={() => props.searchItem(itens.id)}>
           <img src={itens.thumbnail} alt="texto"/>
           <div>
             <span>R${itens.price},00</span>

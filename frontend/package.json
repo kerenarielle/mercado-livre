@@ -20,6 +20,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-router": "^3.0.2",
     "react-scripts": "3.0.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",

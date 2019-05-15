@@ -2,9 +2,15 @@ import React from 'react';
 
 export default props => {
   const keyHandler = (e) => {
-    if (e.key === '0') {
+    if (e.key === 'Enter') {
       e.shiftKey ? props.handleSearch() :  props.handleSearch()
     } 
+  }
+
+  const keyForm = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+    }
   }
 
   return (
@@ -14,17 +20,15 @@ export default props => {
           Logo
         </h1>
 
-        <form>
+        <form onKeyDown={keyForm}>
           <input id='description' type="text" 
               value={props.description} 
               onChange={props.handleChange} 
               placeholder="Nunca dejes de buscar" 
               onKeyUp={keyHandler}/>
-          <button onClick={props.handleSearch}></button>
+          <button type="button" onClick={props.handleSearch}></button>
         </form>
-
       </div>
-
     </header>
   )
 }
