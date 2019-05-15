@@ -15,20 +15,20 @@ export default props => {
 
   return (
     <header>
-      <div className="container">
-        <h1>
-          Logo
-        </h1>
+        <div className="container">
+          <h1>
+            <a href="/">Mercado Livre</a>
+          </h1>
 
-        <form onKeyDown={keyForm}>
-          <input id='description' type="text" 
-              value={props.description} 
-              onChange={props.handleChange} 
-              placeholder="Nunca dejes de buscar" 
-              onKeyUp={keyHandler}/>
-          <button type="button" onClick={props.handleSearch}></button>
-        </form>
-      </div>
-    </header>
+          <form onKeyDown={keyForm}>
+            <input id='description' type="text" 
+                value={props.description} 
+                onChange={props.handleChange} 
+                placeholder="Nunca dejes de buscar" 
+                onKeyUp={keyHandler}/>
+            <button type="button" onClick={props.handleSearch}></button>
+          </form>
+        </div>
+      </header>
   )
 }

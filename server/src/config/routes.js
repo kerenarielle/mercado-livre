@@ -24,8 +24,8 @@ const getProdutos = ( callback) => {
 
 }
 
-const getDescription = (callback) => {
-  https.get('https://api.mercadolibre.com/sites/MLA/search?q=query', (resp) => {
+const getDescription = (id, callback) => {
+  https.get('https://api.mercadolibre.com/items/'+id+'/descriptions', (resp) => {
   let data = '';
 
   resp.on('data', (chunk) => { data += chunk; });

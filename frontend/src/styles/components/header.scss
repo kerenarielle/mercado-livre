@@ -1,9 +1,25 @@
 header {
   background-color: color(amarelo);
   padding: space(medium);
+  height: 60px;
 
   h1 {
     width: 15%;
+
+    a {
+      display: block;
+      background-image: url('assets/Logo_ML-grande.png');
+      background-repeat: no-repeat;
+      background-position-x: center;
+      height: 100%;
+      overflow: hidden;
+      text-indent: -9999px;
+      
+      @media (max-width: 600px) {
+        background-image: url('assets/Logo_ML.png');
+        background-size: 60px;
+      }
+    }
   }
 
 
@@ -25,7 +41,12 @@ header {
   button {
     width:5%;
     background-color: color(cinza, light);
+    background-image: url('assets/ic_Search.png');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
     border: none;
+  
 
     @media (max-width: 400px) {
       width: 10%;
@@ -46,5 +67,6 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    height: 100%;
   }
 }

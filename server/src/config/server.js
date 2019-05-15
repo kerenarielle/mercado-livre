@@ -26,8 +26,8 @@ server.get('/', function(req, res, rep) {
   })
 })
 
-server.get('/:description', function(req, res, rep) {
-  routes.getDescription(function(response) {
+server.get('/api/items/:id/descriptions', function(req, res, rep) {
+  routes.getDescription(req.params.id, function(response) {
     res.write(response)
     res.end()
   })

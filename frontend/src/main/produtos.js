@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import Header from './header';
 import ListaProdutos from './listProduct';
 import axios from 'axios'
-// import history from 'react-router'
-import BrowserRouter from 'react-router-dom'
+import { browserHistory } from 'react-router'
 
 const URL = 'http://localhost:3003/'
 
@@ -12,20 +10,17 @@ export default class Produtos extends Component {
   constructor(props) {
     super(props)
     this.state = { description: '', list: []}
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSearch = this.handleSearch.bind(this)
     this.searchItem = this.searchItem.bind(this)
     this.refresh()
   }
 
-  handleChange(e) {
-    this.setState({
-        ...this.state, description: e.target.value
-    })
-  }
-
-
   refresh(description = '') {
+      if (this.props.params.id) {
+        description = this.props.params.id;
+
+        console.log(description)
+      }
+
       const search = description ? `${description}` : ''
 
       if (search !== '' && search !== undefined) {
@@ -41,8 +36,6 @@ export default class Produtos extends Component {
                 lista.push(e);
               }
             });
-
-            console.log(lista);
             this.setState({...this.state, description, list: lista})
           }
         )
@@ -54,20 +47,16 @@ export default class Produtos extends Component {
   }
 
 
-  handleSearch() {
-    this.refresh(this.state.description)
-  }
-
   searchItem(item) {
-    BrowserRouter.push('/itens/'+item);
+    browserHistory.push('/itens/'+item);
   }
 
   render() {
     return (
       <div className="App">
-        <Header handleChange={this.handleChange}
+        {/* <Header handleChange={this.handleChange}
                 handleSearch={this.handleSearch} 
-                description={this.state.description} ></Header>
+                description={this.state.description} ></Header> */}
         <ListaProdutos list={this.state.list} searchItem={this.searchItem}></ListaProdutos>
       </div>
     )
