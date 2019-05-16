@@ -17,6 +17,7 @@
 
     &:last-child {
       width: 100%;
+      margin-top: space(big);
     }
 
     &:nth-child(2) {
@@ -24,9 +25,8 @@
 
       @media (max-width: 600px) {
         width: 100%;
-        margin-bottom: space(big);
         padding-bottom: space(big);
-        border-bottom: 1px solid color(cinza, light);
+        border-bottom: 1px solid color(cinza, medium);
       }
 
       span {

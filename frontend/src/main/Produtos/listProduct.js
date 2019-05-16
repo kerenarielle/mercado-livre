@@ -5,6 +5,13 @@ export default props => {
 
   const lista = () => {
     const list = props.list || [];
+    if (list.length == 0) {
+      return (
+        <li>
+          <p>Não encontramos resultados para essa busca.</p>
+        </li>
+      )
+    } else {
       return list.map(itens => (
         <li key={itens.id} onClick={() => props.searchItem(itens.id)}>
           <img src={itens.thumbnail} alt="texto"/>
@@ -17,7 +24,7 @@ export default props => {
           <span>{itens.seller_address.city.name}</span>
         </li>
       )
-    )
+    )}
   }
 
   return (

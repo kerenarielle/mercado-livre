@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import Header from '../header/header';
+import { browserHistory } from 'react-router';
 
 const URL = 'http://localhost:3003/'
 
@@ -7,13 +9,26 @@ export default class Item extends Component {
 
   constructor(props) {
     super(props)
-    this.state = {lista: [], descr: []};
+    this.state = {lista: [], descr: [], description: ''};
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSearch = this.handleSearch.bind(this)
     this.componentDidMount()
   }
 
   componentDidMount(){
     this.getDetalheItem();
   }
+
+  handleChange(e) {
+    this.setState({
+        ...this.state, description: e.target.value
+    })
+  }
+
+  handleSearch() {
+    browserHistory.push('/' + this.state.description)
+  }
+
 
   getDetalheItem() {
     axios.get(`${URL}api/items/${this.props.params.id}`).then(
@@ -48,22 +63,25 @@ export default class Item extends Component {
 
 
     return (
-      <section className="container item-produto">
-        <div>
-          {listaImagens()}
-        </div>
-        <div>
-          <span>{lista.condition === 'new' ? 'Novo' : 'Usado'} - {lista.sold_quantity}</span>
-          <strong>{lista.title}</strong>
-          <span>${lista.price}</span>
-          <button>Comprar</button>
+      <section>
+        <Header handleChange={this.handleChange} handleSearch={this.handleSearch} description={this.state.description}></Header>
+        <section className="container item-produto">
+          <div>
+            {listaImagens()}
+          </div>
+          <div>
+            <span>{lista.condition === 'new' ? 'Novo' : 'Usado'} - {lista.sold_quantity}</span>
+            <strong>{lista.title}</strong>
+            <span>${lista.price}</span>
+            <button>Comprar</button>
 
-        </div>
-        <div>
-          <h4>Descripción del producto</h4>
-          {getDescricao()}
-        </div>
-         
+          </div>
+          <div>
+            <h4>Descripción del producto</h4>
+            {getDescricao()}
+          </div>
+          
+        </section>
       </section>
     )
   }
