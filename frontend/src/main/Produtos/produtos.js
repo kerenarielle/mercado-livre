@@ -16,7 +16,6 @@ export default class Produtos extends Component {
     this.handleSearch = this.handleSearch.bind(this)
 
     if (this.props.params.id) {
-      console.log('tem parametro')
       this.requestParams(this.props.params.id);
     } else {
       this.refresh();

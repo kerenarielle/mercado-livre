@@ -45,7 +45,7 @@ let config = {
         'html-loader'
       ]
     },{
-      test: /\.(jpe?g|png|gif|svg)$/i,
+      test: /\.(jpe?g|png|gif|svg|ico)$/i,
       loaders: [{
         loader: 'file-loader',
         options: {

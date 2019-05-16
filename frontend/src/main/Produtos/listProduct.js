@@ -5,7 +5,7 @@ export default props => {
 
   const lista = () => {
     const list = props.list || [];
-    if (list.length == 0) {
+    if (list.length === 0) {
       return (
         <li>
           <p>Não encontramos resultados para essa busca.</p>
